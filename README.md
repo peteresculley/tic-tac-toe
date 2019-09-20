@@ -1,0 +1,1 @@
+Install and run back-end and front-end seperately

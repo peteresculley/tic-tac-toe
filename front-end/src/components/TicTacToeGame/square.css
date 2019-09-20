@@ -1,0 +1,24 @@
+.GameSquare-Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+.GameSquare-Container.clickable {
+    cursor: pointer;
+}
+
+.GameSquare {
+    font-weight: bolder;
+}
+
+.GameSquare.Player1 {
+    color: blue;
+}
+
+.GameSquare.Player2 {
+    color: red;
+}

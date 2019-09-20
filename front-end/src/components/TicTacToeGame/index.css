@@ -1,0 +1,11 @@
+.TicTacToeGame table {
+    border-spacing: 0;
+    border-collapse: initial;
+}
+
+.TicTacToeGame td {
+    padding: 0;
+    height: 5em;
+    width: 5em;
+    border: 3px solid black;
+}

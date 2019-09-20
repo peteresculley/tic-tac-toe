@@ -1,0 +1,11 @@
+.Menu {
+    height: 100%;
+    margin-right: 10px;
+    margin-top: 2em;
+}
+
+.Menu .MenuTab {
+    border: 1px solid black;
+    padding: 8px 4px;
+    cursor: pointer;
+}

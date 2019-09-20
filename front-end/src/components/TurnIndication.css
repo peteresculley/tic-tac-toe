@@ -1,0 +1,30 @@
+.TurnIndication {
+    display: flex;
+    height: 2em;
+}
+
+.TurnIndication .PlayerIndication {
+    width: 50%;
+}
+
+.TurnIndication .PlayerIndication.highlight {
+    font-weight: bold;
+}
+
+.TurnIndication .PlayerIndication.Player1 {
+    color: blue;
+}
+
+.TurnIndication .PlayerIndication.Player2 {
+    color: red;
+}
+
+.TurnIndication .PlayerIndication.winner:before {
+    font-style: italic;
+    content: '!';
+}
+
+.TurnIndication .PlayerIndication.winner:after {
+    font-style: italic;
+    content: '!';
+}

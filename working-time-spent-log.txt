@@ -1,0 +1,12 @@
+start with boiler plate code using command
+    - npx create-react-app everreal-tic-tac-toe --typescript
+    - npx express-generator-typescript everreal-tic-tac-toe-backend
+
+total time spent: ~20 hours (~4 hours each day this week)
+
+notes:
+- Normally, I wouldn't include .env in the git repo, but there's nothing private here, and the project can be started right away if I include the .env files
+- I seperated the front-end and back-end so that they can be run on different servers, and also so that each can be evaluated seperately.
+
+TODO:
+- Types are not right on Dispatch, AsyncDispatch, ThunkDispatch. This is a minor problem because Dispatch is quite standard and clearly marked. I'm saving this headache for after bigger things are finished.
