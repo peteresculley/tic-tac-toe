@@ -2,11 +2,12 @@ import { Pool } from 'pg';
 
 function createPool(): Pool {
     return new Pool({
-        user: process.env.DB_USER || '',
-        password: process.env.DB_PASSWORD || '',
-        database: process.env.DB_DATABASE || '',
-        host: process.env.DB_HOST || 'localhost',
-        port: parseInt(process.env.DB_PORT || '5432', 10),
+        connectionString: process.env.DATABASE_URL
+        // user: process.env.DB_USER || '',
+        // password: process.env.DB_PASSWORD || '',
+        // database: process.env.DB_DATABASE || '',
+        // host: process.env.DB_HOST || 'localhost',
+        // port: parseInt(process.env.DB_PORT || '5432', 10),
     });
 }
 
