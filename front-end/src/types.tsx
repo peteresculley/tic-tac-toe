@@ -18,6 +18,12 @@ export type GameRecord = {
     moves: GameSquare[]
 }
 
+export type GameForeignRecord = {
+    backendId: number | undefined
+    winner: number
+    moves: number[]
+}
+
 export const MenuTabGame = 'GAME_TAB';
 export const MenuTabScores = 'SCORES_TAB';
 export type MenuTab = typeof MenuTabGame | typeof MenuTabScores

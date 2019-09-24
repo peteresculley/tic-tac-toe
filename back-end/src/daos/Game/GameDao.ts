@@ -62,7 +62,7 @@ export class GameDao extends Dao implements IGameDao {
         try {
             const gameCompressed: any = {
                 winner: game.winner,
-                moves: game.moves.toString(),
+                moves: JSON.stringify(game.moves),
                 id: getRandomInt(),
             };
             await super.addEntry(gameCompressed);

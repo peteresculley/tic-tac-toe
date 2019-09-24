@@ -1,4 +1,4 @@
-import { PlayerOrDraw, GameSquare, GameMove } from '../types';
+import { PlayerOrDraw, GameSquare, GameMove, GameRecord, GameForeignRecord } from '../types';
 import { Dispatch } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
 
@@ -7,6 +7,7 @@ export const OPEN_SCORES_MENU = 'OPEN_SCORES_MENU';
 export const GAME_MOVE = 'GAME_MOVE';
 export const MARK_SCORE = 'MARK_SCORE';
 export const UPDATE_SCORE = 'UPDATE_SCORE';
+export const LOAD_GAMES = 'LOAD_GAMES';
 
 export interface NewGameAction {
     type: typeof NEW_GAME
@@ -37,9 +38,16 @@ export interface UpdateScoreAction {
     }
 }
 
+export interface LoadGamesAction {
+    type: typeof LOAD_GAMES
+    payload: {
+        games: GameForeignRecord[]
+    }
+}
+
 interface MiddlewareAdditions {
     asyncDispatch: Dispatch<any> | ThunkDispatch<any, never, any>
 }
 
-export type ActionTypes = NewGameAction | OpenScoresMenuAction | GameMoveAction | MarkScoreAction | UpdateScoreAction
+export type ActionTypes = NewGameAction | OpenScoresMenuAction | GameMoveAction | MarkScoreAction | UpdateScoreAction | LoadGamesAction
 export type ActionTypesWithMiddleware = ActionTypes & MiddlewareAdditions
