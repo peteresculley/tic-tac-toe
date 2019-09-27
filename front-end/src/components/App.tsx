@@ -1,4 +1,4 @@
-import React, { Dispatch } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import Menu from './Menu';
@@ -10,8 +10,8 @@ import { LOAD_GAMES, LoadGamesAction } from '../redux/actionTypes';
 import { ThunkDispatch, ThunkAction } from 'redux-thunk';
 import { AnyAction, ActionCreator } from 'redux';
 
-const getScoresActionCreator: ActionCreator<ThunkAction<any, GameForeignRecord[], null, LoadGamesAction>> = () => {
-    return async (dispatch: Dispatch<any>) => {
+const loadGamesActionCreator: ActionCreator<ThunkAction<any, GameForeignRecord[], null, LoadGamesAction>> = () => {
+    return async (dispatch: React.Dispatch<any>) => {
         const apiHost = process.env.REACT_APP_API_HOST || '127.0.0.1';
         const apiPort = process.env.REACT_APP_API_PORT || '8081';
         const result = await fetch(`http://${apiHost}:${apiPort}/api/scores/getAll`);
@@ -31,14 +31,14 @@ interface IAppProps {
 }
 
 interface IAppDispatch {
-    getScores: () => Promise<LoadGamesAction>
+    loadGames: () => Promise<LoadGamesAction>
 }
 
 interface IApp extends IAppProps, IAppDispatch {}
 
 class App extends React.Component<IApp> {
     componentDidMount() {
-        this.props.getScores();
+        this.props.loadGames();
     }
 
     render() {
@@ -58,7 +58,7 @@ const mapStateToProps = (state: AppState): IAppProps => {
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
     return {
-        getScores: () => dispatch(getScoresActionCreator())
+        loadGames: () => dispatch(loadGamesActionCreator())
     };
 };
 
